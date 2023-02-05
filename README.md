@@ -1,4 +1,8 @@
-# Guide to the code
+# Feature-driven trading of wind and hydrogen
+
+This repository contains the entire code-base associated with the Master thesis "Feature-driven trading of wind and hydrogen" by Emil Helgren at the Technical University of Denmark (DTU), February 2023.
+
+## Guide to the code
 
 This README file is divided into the following sections:
 
@@ -7,13 +11,13 @@ This README file is divided into the following sections:
 - Running the models
 - Evaluating the models
 
-## Important general comments
+### Important general comments
 
 All string values throughout the code refers to specific filenames or headers in data files that are specific to the data being used. The researcher should thus be aware of all occurrences of strings, since the filenames of input data or model results will be dependent on what the researcher has called their files, and in which specific relative paths they are located. All code containing paths to data and model results should thus be expected to cause errors if run directly without considering the actual location of the files being referred to.
 
 To keep the code base to a manageable size and respect the confidentiality required for some of the data, only a few key results are provided, and none of the data is provided in the repository. The code files containing references to specific data or results no longer appearing in the repository thus serves as a reference for how the formatting and testing was performed, and should be modified to the data available for the researcher, and the results produced by the researcher, in order to be usable.
 
-## Overview of files
+### Overview of files
 
 All models are found in separate .jl files the "models" folder. Each feature-driven model contains all three feature-vectors in each file. All python files are created as jupyter notebooks, with the content divided into appropriate sections, and with comments in all functions. In the root of the project, 2 python notebooks for data formatting are found:
 
@@ -48,18 +52,18 @@ Inside the "models" folder, the models follow the naming convention of the repor
 
 Inside the "results" folder are the results of the deterministic, hindsight and best performing learned model in each evaluation context.
 
-## Running the models
+### Running the models
 
 To run the models, two steps are required: (1): Create an appropriate data_loader file, and (2): Create a "results" folder to hold the model parameters (for feature-driven models) or results (for deterministic and hindsight models).
 
-### Creating a data_loader file
+#### Creating a data_loader file
 
 The first step is to create an appropriate data_loader file for the data at hand. By reusing the exact parameter names from the existing data_loader files "data_loader_2020.jl" and "data_loader_2022.jl", the model training (feature-driven) and application (deterministic and hindsight) can be run directly without modification.
 
-### Saving the results
+#### Saving the results
 
 In each model file, the results are exported as a .csv file. The location within the "results" folder and the filename of the exported results should be reviewed by the researcher to ensure the location for saving exists in the project structure, and that the filename is appropriate.
 
-## Evaluating the models
+### Evaluating the models
 
 The three evaluation notebooks are divided into explanatory sections, with the section "Testing the models" performing comparative evaluation of all the models. The files primarily focus on the "Total test period revenue" metric by which the models are compared to each other, but also perform in-depth statistical and operational analyses of the models that were not included in the final report.

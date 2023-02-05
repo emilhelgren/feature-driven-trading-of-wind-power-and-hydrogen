@@ -19,14 +19,14 @@ To keep the code base to a manageable size and respect the confidentiality requi
 
 ### Overview of files
 
-All models are found in separate .jl files the "models" folder. Each feature-driven model contains all three feature-vectors in each file. All python files are created as jupyter notebooks, with the content divided into appropriate sections, and with comments in all functions. In the root of the project, 2 python notebooks for data formatting are found:
+All optimization problems are calculated using Julia (.jl files), and Python (.ipynb files) is used to create the dataset and perform evaluations and investigations of the data and results. All models are found in separate .jl files the "models" folder. Each feature-driven model contains all three feature-vectors in each file. All python files are created as jupyter notebooks, with the content divided into appropriate sections, and with all functions having a description comment explaining the functionality. 
+
+In the root of the project, 2 python notebooks for data formatting are found:
 
 - "synthetic_forecasts.ipynb"
   - This file fits theoretical distributions to the forecast data provided by Siemens Gamesa.
 - "data_formatter.iypnb"
   - This file formats price and production data from ENTSO-E transparency platform, and utilizes the distributions found in "synthetic_forecasts.ipynb" to create the final dataset. The file generate the data for 2020 as an example.
-
-Note that since some of the data is confidential, the files serve as an example to show how the formatting was performed, and will produce errors if run.
 
 Three other python notebooks for evaluation are found:
 
@@ -39,12 +39,13 @@ These notebooks perform evaluations of all models in the three different context
 Finally, 5 julia files are found in the root as well:
 
 - "data_export.jl"
-  - This file holds generic functions for exporting model parameters and results of deterministic and hindsight models.
+  - This file holds generic functions for exporting model parameters for feature-driven models, and results for deterministic and hindsight models.
 - "data_loader_2020.jl"
   - This files loads and formats data for 2019-2020 so the models can use it directly.
 - "data_loader_2022.jl"
-  - This files loads and formats data for 2022 so the models can use it directly.
+  - This files loads and formats data for 5 months in 2022 so the models can use it directly.
 - "hydrogen_prices.jl"
+  - This file calculates a MWh-equivalent hydrogen price.
 - "save_improved_forecasts.jl"
   - This file exports the improved forecasts provided by the forecasting model, so the evaluation files can import the values.
 
@@ -56,7 +57,7 @@ The file "2020_data.csv" contains the formatted data imported in the "data_loade
 
 ### Running the models
 
-To run the models, two steps are required: (1): Create an appropriate data_loader file, and (2): Create a "results" folder to hold the model parameters (for feature-driven models) or results (for deterministic and hindsight models).
+To run the models, two steps are required: (1): Create an appropriate data_loader file, and (2): Create a "results" folder to hold the trained model parameters (for feature-driven models) or results (for deterministic and hindsight models).
 
 #### Creating a data_loader file
 

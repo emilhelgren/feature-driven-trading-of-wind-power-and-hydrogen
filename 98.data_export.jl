@@ -1,5 +1,7 @@
 using CSV, DataFrames
 
+# This file defines some generic functions used for exporting results
+
 function createDF(list_of_dataseries, list_of_names)
     df = DataFrame(
         list_of_dataseries, :auto
@@ -18,14 +20,3 @@ function easy_export(list_of_dataseries, list_of_names, filename)
     export_dataframe(df, filename)
     print("\n\nExported file: $filename\n\n")
 end
-
-# s1 = [1, 2, 3, 4]
-# s2 = ["a", "b", "d", "q"]
-# s = [s1, s2]
-# names = ["numbers", "letters"]
-
-# df = createDF(s, names)
-# print("Tjek df: \n")
-# print(df)
-# export_dataframe(df, "testExport")
-

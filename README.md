@@ -26,8 +26,6 @@ All models are found in separate .jl files the "models" folder. Each feature-dri
 - "data_formatter.iypnb"
   - This file formats price and production data from ENTSO-E transparency platform, and utilizes the distributions found in "synthetic_forecasts.ipynb" to create the final dataset. The file generate the data for 2020 as an example.
 
-Note that since some of the data is confidential, the files serve as an example to show how the formatting was performed, and will produce errors if run.
-
 Three other python notebooks for evaluation are found:
 
 - "evaluation_2020.ipynb"

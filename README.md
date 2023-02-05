@@ -13,9 +13,9 @@ This README file is divided into the following sections:
 
 ### Important general comments
 
-All string values throughout the code refers to specific filenames or headers in data files that are specific to the data being used. The researcher should thus be aware of all occurrences of strings, since the filenames of input data or model results will be dependent on what the researcher has called their files, and in which specific relative paths they are located. All code containing paths to data and model results should thus be expected to cause errors if run directly without considering the actual location of the files being referred to.
+All string values throughout the code refers to specific filenames or headers in data files that are specific to the data being used. The researcher should thus be aware of all occurrences of strings, since the filenames of input data or model results will be dependent on what the researcher has called their files, and in which specific relative paths they are located. All code containing paths to data and model results should thus be expected to cause errors if run directly without considering the actual location of the files being referred to. The exception to this is the example included in the "evaluation_2020.ipynb" file, which can be run directly after cloning the repository (elaborated in section "Evaluating the models" in the present guide).
 
-To keep the code base to a manageable size and respect the confidentiality required for some of the data, only a few key results are provided, and none of the data is provided in the repository. The code files containing references to specific data or results no longer appearing in the repository thus serves as a reference for how the formatting and testing was performed, and should be modified to the data available for the researcher, and the results produced by the researcher, in order to be usable.
+To keep the code base to a manageable size and respect the confidentiality required for some of the data, only a few key results are provided, and only the final formatted data for 2020 is provided in the repository (meaning only publicly available and self-generated data). The original forecasts probided by Siemens Gamesa is thus **not** included in the repository, and all the publicly available source files before data formatting is not included either. The code files containing references to specific data or results no longer appearing in the repository thus serves as a reference for how the formatting and testing was performed, and should be modified to the data available for the researcher, and the results produced by the researcher, in order to be usable.
 
 ### Overview of files
 
@@ -52,6 +52,8 @@ Inside the "models" folder, the models follow the naming convention of the repor
 
 Inside the "results" folder are the results of the deterministic, hindsight and best performing learned model in each evaluation context.
 
+The file "2020_data.csv" contains the formatted data imported in the "data_loader_2020.jl" file and the two evaluation files for 2020.
+
 ### Running the models
 
 To run the models, two steps are required: (1): Create an appropriate data_loader file, and (2): Create a "results" folder to hold the model parameters (for feature-driven models) or results (for deterministic and hindsight models).
@@ -67,3 +69,10 @@ In each model file, the results are exported as a .csv file. The location within
 ### Evaluating the models
 
 The three evaluation notebooks are divided into explanatory sections, with the section "Testing the models" performing comparative evaluation of all the models. The files primarily focus on the "Total test period revenue" metric by which the models are compared to each other, but also perform in-depth statistical and operational analyses of the models that were not included in the final report.
+
+The "evaluation_2020.ipynb" contains a small example that will run directly after cloning the repository. The cell containing the example is preceded by the header "Deterministic and hindsight (and example HAPD-AF-12)", and requires that all previous cells (which is the entire "Imports and generic functions" section) have been executed successfully. All the files being imported until and including the example are contained in the repository, and so the only preparation required is to make sure the following libraries are installed:
+
+- numpy
+- pandas
+- matplotlib
+- sklearn

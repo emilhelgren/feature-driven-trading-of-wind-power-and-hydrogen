@@ -181,7 +181,7 @@ function get_forecasted_plan(training_period_length, bidding_start)
     return [[value.(qF[i, :, d]) for i in 1:3] for d in 1:3], [[value.(qH[i, :, d]) for i in 1:3] for d in 1:3]
 end
 
-include("../98.data_export.jl")
+include("../data_export.jl")
 
 print("\n\n")
 print("\n---------------------------AF------------------------------")

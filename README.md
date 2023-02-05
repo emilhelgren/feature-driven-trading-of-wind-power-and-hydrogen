@@ -19,7 +19,7 @@ To keep the code base to a manageable size and respect the confidentiality requi
 
 ### Overview of files
 
-All optimization problems are calculated using Julia (.jl files), and Python (.ipynb files) is used to create the dataset and perform evaluations and investigations of the data and results. All models are found in separate .jl files the "models" folder. Each feature-driven model contains all three feature-vectors in each file. All python files are created as jupyter notebooks, with the content divided into appropriate sections, and with all functions having a description comment explaining the functionality. 
+All optimization problems are calculated using Julia (.jl files), and Python (.ipynb files) is used to create the dataset and perform evaluations and investigations of the data and results. All models are found in separate .jl files the "models" folder. Each feature-driven model contains all three feature-vectors in each file. All python files are created as jupyter notebooks, with the content divided into appropriate sections, and with all functions having a description comment explaining the functionality.
 
 In the root of the project, 2 python notebooks for data formatting are found:
 

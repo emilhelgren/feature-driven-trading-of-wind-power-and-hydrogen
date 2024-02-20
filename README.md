@@ -1,6 +1,6 @@
 # Feature-driven trading of wind and hydrogen
 
-This repository contains the entire code-base associated with the Master thesis "Feature-driven trading of wind and hydrogen" by Emil Helgren at the Technical University of Denmark (DTU), February 2023.
+This repository contains the entire code-base associated with the Master thesis "Feature-driven trading of wind and hydrogen" by Emil Helgren at the Technical University of Denmark (DTU), February 2023. The full thesis report can be found in the root of this repository. 
 
 ## Guide to the code
 
